@@ -1,0 +1,5 @@
+name: 'Example Form'
+type: module
+description: 'A simple module that demonstrates creating a custom form in Drupal'
+package: Custom
+core_version_requirement: ^9 || ^10

@@ -1,0 +1,23 @@
+example_form:
+  path: '/example-form'
+  defaults:
+    _title: 'Example form'
+    _form: 'Drupal\example_form\Form\ExampleForm'
+  requirements:
+    _permission: 'access content'
+
+example_form.custom:
+  path: '/example-form/custom'
+  defaults:
+    _title: 'Custom'
+    _form: 'Drupal\example_form\Form\CustomForm'
+  requirements:
+    _permission: 'access content'
+
+example_form.example:
+  path: '/example-form/example'
+  defaults:
+    _title: 'Form in Controller'
+    _controller: '\Drupal\example_form\Controller\ExampleFormController::createForm'
+  requirements:
+    _permission: 'access content'
