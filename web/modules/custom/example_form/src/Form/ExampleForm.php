@@ -52,8 +52,7 @@ class ExampleForm extends FormBase {
 
 
     // Use Drupal's built-in email validation.
-    if (!\Drupal::service('email.validator')
-      ->isValid($email)) {
+    if (!\Drupal::service('email.validator')->isValid($email)) {
       $form_state->setErrorByName('email', $this->t('Please enter a valid email address.'));
     }
   }
@@ -61,13 +60,12 @@ class ExampleForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-\Drupal::messenger()->addMessage ($this->t('Form submitted. Name: @name, Email: @email, Message: @message', [
+  \Drupal::messenger()->addMessage ($this->t('Form submitted. Name: @name, Email: @email, Message: @message', [
   '@name' => $form_state->getValue('name'),
   '@email' => $form_state->getValue('email'),
   '@message' => $form_state->getValue('message')
 
-])
-
+   ])
 );
   }
 }
